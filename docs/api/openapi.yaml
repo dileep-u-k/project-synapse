@@ -1,0 +1,60 @@
+openapi: 3.0.0
+info:
+  title: Project Synapse Inference API
+  version: "1.0.0"
+  description: "Asynchronous API for low-latency LLM inference."
+paths:
+  /async-infer:
+    post:
+      summary: Submit an inference job
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                model:
+                  type: string
+                  example: "distilgpt2"
+                prompt:
+                  type: string
+                  example: "The future of AI is"
+      responses:
+        '202':
+          description: Job accepted for processing.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  jobId:
+                    type: string
+                    example: "a1b2c3d4-e5f6-7890-1234-567890abcdef"
+  /results/{jobId}:
+    get:
+      summary: Retrieve the result of an inference job
+      parameters:
+        - name: jobId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Job result.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  jobId:
+                    type: string
+                  status:
+                    type: string
+                    enum: [PENDING, COMPLETED, FAILED]
+                  result:
+                    type: string
+                    example: "The future of AI is decentralized and collaborative."
+        '404':
+          description: Job not found.
