@@ -8,7 +8,7 @@
 
 This project tackles the critical challenges of high latency and low GPU utilization in traditional serverless deployments. By implementing a custom Go-based workload manager, it enables intelligent request batching and worker pooling to drastically reduce costs and achieve production-grade P99 latencies.
 
----
+
 ## ✨ Key Features
 
 * **Dynamic Request Batching:** Intelligently groups incoming requests to maximize GPU throughput.
@@ -42,7 +42,7 @@ graph TD
         E -- Writes Result --> D;
     end
 
-    📜 Design & Architecture Documents
+📜 Design & Architecture Documents
 This project's design is formally documented to ensure clarity and capture key decisions.
 
 📄 Main Design Document: The complete overview, problem statement, proposed solution, and Service Level Objectives (SLOs).
