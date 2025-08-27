@@ -17,7 +17,7 @@ This project tackles the critical challenges of high latency and low GPU utiliza
 * **High-Performance Go Orchestrator:** A lightweight, concurrent manager capable of handling thousands of requests.
 * **Full Observability:** Pre-configured with Prometheus and Grafana for deep insights into performance and SLOs.
 * **Infrastructure as Code:** The entire stack is defined and deployed using Terraform for repeatable, automated setups.
-* 
+  
 ## 🏛️ Core Architecture
 
 The system uses a decoupled, asynchronous architecture to ensure scalability and resilience. For a detailed view, see the full diagram and design documents linked below.
